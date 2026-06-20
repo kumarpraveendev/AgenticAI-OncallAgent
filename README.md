@@ -1,4 +1,4 @@
-# agentic-oncall: A Decision Record
+# agentic-oncall
 
 [![ci](https://github.com/kumarpraveendev/agentic-oncall/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/agentic-oncall/actions/workflows/ci.yml)
 
