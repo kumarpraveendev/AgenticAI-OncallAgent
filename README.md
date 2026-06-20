@@ -1,6 +1,6 @@
-# agentic-oncall
+# OnCallAgent
 
-[![ci](https://github.com/kumarpraveendev/agentic-oncall/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/agentic-oncall/actions/workflows/ci.yml)
+[![ci](https://github.com/kumarpraveendev/agentic-oncall/actions/workflows/ci.yml/badge.svg)](https://github.com/kumarpraveendev/agentic-oncall/actions/workflows/ci.yml)
 
 > A reference design for an AI on-call agent that triages, diagnoses, and mitigates production incidents — written as the decisions a Head of Engineering owns when an agent is allowed to touch production, not a tour of the orchestration.
 
