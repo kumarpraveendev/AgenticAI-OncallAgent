@@ -1,0 +1,42 @@
+[
+  {
+    "name": "staging crashloop auto-mitigates (grounded, reversible, non-prod)",
+    "incident": {"title": "checkout pods crashlooping", "severity": "SEV2", "environment": "staging", "signals": ["pod_crashloop"]},
+    "expect": {"auto_resolved": true, "escalated": false, "executed": 1, "approvals": 0, "blocked": 0}
+  },
+  {
+    "name": "prod crashloop needs approval to restart",
+    "incident": {"title": "checkout pods crashlooping", "severity": "SEV1", "environment": "prod", "signals": ["pod_crashloop"]},
+    "expect": {"auto_resolved": false, "escalated": true, "executed": 0, "approvals": 1, "blocked": 0}
+  },
+  {
+    "name": "prod cache stampede auto-mitigates (low-blast action cleared for prod)",
+    "incident": {"title": "session cache stampede", "severity": "SEV2", "environment": "prod", "signals": ["cache_stampede"]},
+    "expect": {"auto_resolved": true, "escalated": false, "executed": 1, "approvals": 0, "blocked": 0}
+  },
+  {
+    "name": "prod high error rate -> rollback needs approval",
+    "incident": {"title": "elevated 5xx after deploy", "severity": "SEV1", "environment": "prod", "signals": ["high_error_rate"]},
+    "expect": {"auto_resolved": false, "escalated": true, "executed": 0, "approvals": 1, "blocked": 0}
+  },
+  {
+    "name": "staging latency spike auto-scales",
+    "incident": {"title": "p99 latency spike", "severity": "SEV3", "environment": "staging", "signals": ["latency_p99_spike"]},
+    "expect": {"auto_resolved": true, "escalated": false, "executed": 1, "approvals": 0, "blocked": 0}
+  },
+  {
+    "name": "runbook suggests an out-of-mandate action -> blocked and escalated",
+    "incident": {"title": "suspected data corruption", "severity": "SEV1", "environment": "prod", "signals": ["suspected_data_corruption"]},
+    "expect": {"auto_resolved": false, "escalated": true, "executed": 0, "approvals": 0, "blocked": 1}
+  },
+  {
+    "name": "diagnosed but no automated remediation -> escalate with context",
+    "incident": {"title": "disk pressure on data nodes", "severity": "SEV2", "environment": "prod", "signals": ["disk_pressure"]},
+    "expect": {"auto_resolved": false, "escalated": true, "executed": 0, "approvals": 0, "blocked": 0}
+  },
+  {
+    "name": "unknown incident class -> escalate, never guess",
+    "incident": {"title": "novel symptom, no runbook", "severity": "SEV2", "environment": "prod", "signals": ["quantum_flux"]},
+    "expect": {"auto_resolved": false, "escalated": true, "executed": 0, "approvals": 0, "blocked": 0}
+  }
+]
